@@ -103,9 +103,13 @@ First download the repo.
    psql -U postgres  -f 'createDatabase.sql'
    ```
    
-   create database scripts screenshot.
+   create database scripts screenshot in MacOS.
       
    <img width="651" alt="Screen Shot 2022-12-13 at 4 29 20 AM" src="https://user-images.githubusercontent.com/12943354/207293822-4c2cb424-cfda-4b2f-be85-8676fa640db6.png">
+   
+   create database scripts screenshot in Windows.
+   
+   <img width="468" alt="image" src="https://user-images.githubusercontent.com/12943354/207303023-3a377d65-298e-4689-a9e3-d390315ecddf.png">
 
    
 4. Create tables.
@@ -114,11 +118,15 @@ First download the repo.
    psql -U postgres -d oadb -f 'createTable.sql'
    ```
    
-   create table scripts screenshot.
+   create table scripts screenshot in MacOS.
    
    <img width="468" alt="image" src="https://user-images.githubusercontent.com/12943354/207295016-9e4ad5e6-de1b-4dc8-a2a4-c6c4032fdc95.png">
 
-
+   create table scripts screenshot in Windows.
+   
+   <img width="468" alt="image" src="https://user-images.githubusercontent.com/12943354/207303343-946ce9f5-ca2d-4de5-ad07-1ed1618bdae2.png">
+   
+   
 5. Load data into tables.
    unzip the csv files to the same place for sql scripts.
    
@@ -126,11 +134,14 @@ First download the repo.
    psql -U postgres -d oadb -f 'loadData.sql
    ```   
    
-   load data scripts screenshot.
+   load data scripts screenshot in MacOS.
    
    <img width="468" alt="image" src="https://user-images.githubusercontent.com/12943354/207295200-9dbdf77c-4680-43a4-ba99-a15b038a8bcf.png">
   
+   load data scripts screenshot in Windows.
    
+   <img width="468" alt="image" src="https://user-images.githubusercontent.com/12943354/207303577-8b5ac622-3065-4782-b3a4-02b15ac912bb.png">
+
    
 ### Start the database server and webtool client.
 
