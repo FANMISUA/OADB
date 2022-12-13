@@ -1,6 +1,7 @@
 <a name="readme-top"></a>
 
-# oadb_webtool
+# OADB webtool and postgreSQL Install Instructions.
+
  webtool to support opioid agonist/antagonist database management. 
 
 ---
@@ -41,7 +42,7 @@ This should open the psql interactive shell and print a prompt that looks like:
 
 1). Download and install PostgreSQL versions later than 13.4 The installer is available here: https://www.postgresql.org/download/.
    
-If the installation was successful, you should be able to run the following command.
+If the installation was successful, you should be able to run the following command. Your version should be later than 13.4.
 
     $ postgres -V
     postgres (PostgreSQL) 13.4
@@ -57,7 +58,7 @@ For development, you will only need Node.js and a node global package, Yarn, ins
   Just go on [official Node.js website](https://nodejs.org/en/download/) and download the installer. Install Node version later than 14.13.0.
 
 
-If the installation was successful, you should be able to run the following command.
+If the installation was successful, you should be able to run the following command. Your version number should be later than 14.13.0.
 
     $ node --version
     16.13.0
@@ -65,94 +66,94 @@ If the installation was successful, you should be able to run the following comm
     $ npm --version
     8.10.0
 
- Update `npm`.
-
-    $ npm install npm -g
-
-
-  Yarn installation.
-
-    $ npm install -g yarn
-
-
 ---
 <!-- INSTALL STEPS -->
-## Set up oadb webtool Steps
+## Set up oadb postgreSQL database and OADB webtool.
 First download the repo.
 
 1. Clone the repo. You can also use the download zip botton to download the respository to your local machine.
    ```sh
-   git clone https://github.com/FANMISUA/oadb_webtool.git
+   git clone https://github.com/FANMISUA/OADB.git
    ```
    unzip webtool.zip to local folder.
    unzip *.csv.zip files to *.csv under postgreSQL.
    
+   ![Screen Shot 2022-12-13 at 4 43 02 AM](https://user-images.githubusercontent.com/12943354/207296923-56cb6aaf-5ffc-45bc-8650-632defde27f3.png) 
+   
+   <p align="right">(<a href="#readme-top">back to top</a>)</p>
    
 ### Set up local database using PostgreSQL
 
-1. Open Terminal and go to PostgreSQL folder. 
+2. Open Terminal and go to PostgreSQL folder. if your download the git repository under /tmp/github/. then you can run the following commands:
     
-     $ cd 
+     
+   ```sh
+   cd /tmp/github/OADB/PostgreSQL
+   ```
     
-2. Create and Connect Database. 
+    <img width="496" alt="Screen Shot 2022-12-13 at 4 16 32 AM" src="https://user-images.githubusercontent.com/12943354/207291359-3eacd91e-e625-4315-ab71-1f504dd546ca.png">
+    
+    You can create your own path and change the command path to:  ``` cd $YOURPATH/OADB/PostgreSQL ```.
+    
+3. Create and Connect local Database oadb. 
 
    Change the path to your sql script absolute path.
-   ```sh
-   psql -U postgres  -f 'C:/temp/data/test_oadb/createDatabase.sql'
-   ```
-   create database scripts screenshot.
-   ![psqlinstall1](https://user-images.githubusercontent.com/12943354/204495005-0e5be89f-70e0-4e53-8066-9776338ad6f4.png)
    
-2. Create tables.
+   ```sh
+   psql -U postgres  -f 'createDatabase.sql'
+   ```
+   
+   create database scripts screenshot.
+      
+   <img width="651" alt="Screen Shot 2022-12-13 at 4 29 20 AM" src="https://user-images.githubusercontent.com/12943354/207293822-4c2cb424-cfda-4b2f-be85-8676fa640db6.png">
 
-   ```js
+   
+4. Create tables.
+
+   ```sh
    psql -U postgres -d oadb -f 'createTable.sql'
    ```
+   
    create table scripts screenshot.
-   ![psqlinstall2](https://user-images.githubusercontent.com/12943354/204495032-67d5ea37-2f90-43ea-bf7d-a6aca3e00a5c.png)
+   
+   <img width="468" alt="image" src="https://user-images.githubusercontent.com/12943354/207295016-9e4ad5e6-de1b-4dc8-a2a4-c6c4032fdc95.png">
 
-3. Load data into tables.
+
+5. Load data into tables.
    unzip the csv files to the same place for sql scripts.
    
-   ```js
+   ```sh
    psql -U postgres -d oadb -f 'loadData.sql
    ```   
+   
    load data scripts screenshot.
-   ![psqlinstall3](https://user-images.githubusercontent.com/12943354/204495052-fafb7cb1-3ac9-4cf0-a7c1-aaa80a5b7ed3.png)
-
    
-
-### set up React web tool using Visual Studio Code
-
-_Below is the example of how you can install and set up the webtool and database on your local machine._
-
-5. Install modules for server.
-   ```sh
-   cd server
-   yarn add express pg cors
-   ```
-
-6. Install modules for client.
-   ```sh
-   cd client
-   yarn add react antd react-router-dom@6 ketcher-react @mui/icons-material @emotion/react @emotion/styled react-highlight-words smiles-drawer
-   ```
-
-7. Run server
-   ```sh
-   cd server
-   nodemon index
-   ```
-   run server script screenshot.
-   ![run server](https://user-images.githubusercontent.com/12943354/204495109-31318718-c268-46ee-9531-7b33bdcaaf09.png)
+   <img width="468" alt="image" src="https://user-images.githubusercontent.com/12943354/207295200-9dbdf77c-4680-43a4-ba99-a15b038a8bcf.png">
+  
    
-8. Run Client
+   
+### Start the database server and webtool client.
+
+6. open server folder under webtool and start the server.
    ```sh
-   cd client
+   cd /tmp/github/OADB/webtool/server
+   node index
+   ```
+   
+   screenshot for starting the database server.
+   
+   <img width="560" alt="Screen Shot 2022-12-13 at 4 49 16 AM" src="https://user-images.githubusercontent.com/12943354/207297991-8f968582-6935-4d2b-8dc5-d09770d4cee6.png">
+
+
+7. open client folder under webtool and start the client.
+   ```sh
+   cd /tmp/github/OADB/webtool/client
    npm run start
    ```
+
    run client script screenshot.
-   ![run client](https://user-images.githubusercontent.com/12943354/204495136-a65d8345-1d49-4709-8ae9-d1debbbaa503.png)
+   
+   <img width="379" alt="Screen Shot 2022-12-13 at 4 51 42 AM" src="https://user-images.githubusercontent.com/12943354/207300469-d2b9eee9-2497-4367-9afe-93e769b276a7.png">
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
