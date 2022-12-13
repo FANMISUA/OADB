@@ -181,7 +181,7 @@ First download the repo.
 
 Fan Dong - [fan.dong@fda.hhs.gov]
 
-Project Link: [https://github.com/FANMISUA/oadb_webtool](https://github.com/FANMISUA/oadb_webtool)
+Project Link: [https://github.com/FANMISUA/oadb_webtool](https://github.com/FANMISUA/OADB.git)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
