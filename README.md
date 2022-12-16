@@ -40,9 +40,9 @@ This should open the psql interactive shell and print a prompt that looks like:
 
 - ###### PostgreSQL installation
 
-1). Download and install PostgreSQL versions later than 13.4 The installer is available here: https://www.postgresql.org/download/.
+1). Download and install PostgreSQL versions later than 13.4 The installer is available here: https://www.postgresql.org/download/. Use password 'postgres' for your default postgres username set up for installation. 
    
-If the installation was successful, you should be able to run the following command. Your version should be later than 13.4.
+If the installation was successful, you should be able to run the following command. Your version should be later than 13.4. 
 
     $ postgres -V
     postgres (PostgreSQL) 13.4
