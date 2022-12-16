@@ -71,7 +71,8 @@ If the installation was successful, you should be able to run the following comm
 ## Set up oadb postgreSQL database and OADB webtool.
 First download the repo.
 
-1. Clone the repo. You can also use the download zip botton to download the respository to your local machine.
+1. Clone the repo. You can use the following git command to download the respository to your local machine.
+   If you don't have git installed. Use the link: https://desktop.github.com/ to install github desktop first.
    ```sh
    git clone https://github.com/FANMISUA/OADB.git
    ```
@@ -131,7 +132,7 @@ First download the repo.
    unzip the csv files to the same place for sql scripts.
    
    ```sh
-   psql -U postgres -d oadb -f 'loadData.sql
+   psql -U postgres -d oadb -f 'loadData.sql'
    ```   
    
    load data scripts screenshot in MacOS.
