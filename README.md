@@ -160,6 +160,7 @@ First download the repo.
 7. open client folder under webtool and start the client.
    ```sh
    cd /tmp/github/OADB/webtool/client
+   yarn add react antd react-router-dom@6 ketcher-react @mui/icons-material @emotion/react @emotion/styled react-highlight-words smiles-drawer
    npm run start
    ```
 
